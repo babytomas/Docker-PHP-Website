@@ -1,0 +1,22 @@
+# MySQL Dockerfile
+# VERSION 1.0.0
+# Author: Cheuknang Chiang
+
+# Base on offcial mysql
+FROM mysql:${VERSION:-5.7}
+MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
+
+# Copy init scripts
+COPY scripts /home/init-scripts
+
+# Run the init script
+#RUN /bin/bash /home/init-scripts/init.sh
+
+# Set mysql root password
+ENV MYSQL_ROOT_PASSWORD password
+
+# Other operation
+# ...
+
+# Remove scripts
+RUN rm -rf /home/init-scripts
