@@ -1,0 +1,15 @@
+.DS_Store
+
+/SourceFiles/.env
+
+/Develop/MySQL/data/*
+
+/Develop/Nginx/conf/*
+!/Develop/Nginx/conf/functions
+!/Develop/Nginx/conf/rewrite
+/Develop/Nginx/logs/*
+
+/Develop/Website/*
+!/Develop/Website/default/index.html
+!/Develop/Website/default/index.php
+!/Develop/Website/README.md

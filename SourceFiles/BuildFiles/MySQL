@@ -10,10 +10,10 @@ MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
 COPY scripts /home/init-scripts
 
 # Run the init script
-#RUN /bin/bash /home/init-scripts/init.sh
+RUN /bin/bash /home/init-scripts/init.sh
 
-# Set mysql root password
-ENV MYSQL_ROOT_PASSWORD password
+# Include custom configuration
+RUN echo "!includedir /etc/mysql/custom.conf.d/" >> /etc/mysql/my.cnf
 
 # Other operation
 # ...

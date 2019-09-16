@@ -49,4 +49,4 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
     volumes:
       - ${ROOT_PATH}/MySQL/data:/var/lib/mysql
-      - ${ROOT_PATH}/MySQL/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ${ROOT_PATH}/MySQL/conf:/etc/mysql/custom.conf.d
