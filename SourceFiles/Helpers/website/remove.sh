@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# Create website
+# Remove website
 # ...
