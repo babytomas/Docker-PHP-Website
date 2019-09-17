@@ -171,5 +171,17 @@ echo "MYSQL_PASSWORD=$MYSQL_PASSWORD" >> .env
 # Download phpMyAdmin, or use local version
 # ...
 
+# Install apache
+# ...
+
+# Install redis
+# ...
+
+# Install memcached
+# ...
+
+# Check ports
+# ...
+
 # Build and run on docker-compose
 docker-compose up -d
