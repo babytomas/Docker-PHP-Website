@@ -4,6 +4,9 @@ export PATH
 
 # Check docker & docker-compose
 if ! [ -x "$(command -v docker)" ]; then
+  # Install git /  docker & docker-compose
+  # ...
+
   echo "Error: Please install docker & docker-compose, and try again later"
   exit 1
 fi
