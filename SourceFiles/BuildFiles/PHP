@@ -36,4 +36,4 @@ RUN /bin/bash /home/init-scripts/php/install_ioncube.sh
 # ...
 
 # Remove scripts
-#RUN rm -rf /home/init-scripts
+RUN rm -rf /home/init-scripts
