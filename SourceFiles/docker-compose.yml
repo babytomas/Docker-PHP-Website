@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3"
 services:
   php:
     container_name: ${APP_NAME}-php
@@ -9,11 +9,11 @@ services:
       args:
         VERSION: ${PHP_VERSION}
         ROOT_PATH: ${ROOT_PATH}
-    #restart: always
+    restart: always
     depends_on:
       - mysql
-    ports:
-      - "9000:9000"
+    expose:
+      - "9000"
     volumes:
       - ${ROOT_PATH}/Website:/var/www/html
   nginx:
@@ -24,7 +24,7 @@ services:
       dockerfile: Nginx
       args:
         VERSION: ${NGINX_VERSION}
-    #restart: always
+    restart: always
     depends_on:
       - php
     ports:
@@ -42,7 +42,7 @@ services:
       dockerfile: MySQL
       args:
         VERSION: ${MYSQL_VERSION}
-    #restart: always
+    restart: always
     ports:
       - "3306:3306"
     environment:

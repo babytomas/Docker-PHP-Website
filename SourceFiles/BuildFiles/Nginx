@@ -2,8 +2,11 @@
 # VERSION 1.0.0
 # Author: Cheuknang Chiang
 
+# Set the nginx version
+ARG VERSION=latest
+
 # Base on offcial nginx
-FROM nginx:${VERSION:-latest}
+FROM nginx:${VERSION}
 MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
 
 # Copy init scripts
