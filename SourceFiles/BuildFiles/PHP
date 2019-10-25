@@ -34,6 +34,7 @@ RUN /bin/bash /home/init-scripts/php/install_ioncube.sh
 # Install Composer
 RUN mv /home/init-scripts/php/composer.phar /usr/bin/composer
 RUN chmod +x /usr/bin/composer
+RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 # Other operation
 # ...
