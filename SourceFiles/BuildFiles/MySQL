@@ -22,4 +22,5 @@ RUN echo "!includedir /etc/mysql/custom.conf.d/" >> /etc/mysql/my.cnf
 # ...
 
 # Remove scripts
+WORKDIR /root
 RUN rm -rf /home/init-scripts

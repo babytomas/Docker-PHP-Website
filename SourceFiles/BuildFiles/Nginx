@@ -22,4 +22,5 @@ RUN cp /etc/nginx/conf.d/default.conf /etc/nginx/default.conf.bak
 # ...
 
 # Remove scripts
+WORKDIR /root
 RUN rm -rf /home/init-scripts
