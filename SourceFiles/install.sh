@@ -123,11 +123,11 @@ fi
 
 # Set the Nginx version
 while true; do
-  read -p "Nginx version ( default is '1.16.1' ): " NGINX_VERSION
+  read -p "Nginx version ( default is 'latest' ): " NGINX_VERSION
 
-  # Default version is '1.16.1'
+  # Default version is 'latest'
   if [ "$NGINX_VERSION" = "" ]; then
-      NGINX_VERSION="1.16.1"
+      NGINX_VERSION="latest"
   fi
 
   # Check Nginx image
@@ -158,12 +158,12 @@ done
 echo "" > .env
 
 # Set configuration
-echo "APP_NAME=$APP_NAME" >> .env
-echo "ROOT_PATH=$ROOT_PATH" >> .env
-echo "PHP_VERSION=$PHP_VERSION" >> .env
-echo "NGINX_VERSION=$NGINX_VERSION" >> .env
-echo "MYSQL_VERSION=$MYSQL_VERSION" >> .env
-echo "MYSQL_PASSWORD=$MYSQL_PASSWORD" >> .env
+echo "APP_NAME=$APP_NAME\n
+ROOT_PATH=$ROOT_PATH\n
+PHP_VERSION=$PHP_VERSION\n
+NGINX_VERSION=$NGINX_VERSION\n
+MYSQL_VERSION=$MYSQL_VERSION\n
+MYSQL_PASSWORD=$MYSQL_PASSWORD" >> .env
 
 # Download ionCube, or use local version
 # ...

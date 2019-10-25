@@ -26,6 +26,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli fileinfo
 
 # Install IonCube
 #ADD scripts/php/ioncube_loaders_lin_x86-64.tar.gz /usr/local/etc/php/
+WORKDIR /home/init-scripts/php
 RUN /bin/bash /home/init-scripts/php/install_ioncube.sh
 
 # Install Composer
@@ -35,4 +36,4 @@ RUN /bin/bash /home/init-scripts/php/install_ioncube.sh
 # ...
 
 # Remove scripts
-RUN rm -rf /home/init-scripts
+#RUN rm -rf /home/init-scripts
