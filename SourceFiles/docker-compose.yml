@@ -9,6 +9,9 @@ services:
       args:
         VERSION: ${PHP_VERSION}
         ROOT_PATH: ${ROOT_PATH}
+    networks:
+      - frontend
+      - backend
     restart: always
     depends_on:
       - mysql
@@ -24,6 +27,8 @@ services:
       dockerfile: Nginx
       args:
         VERSION: ${NGINX_VERSION}
+    networks:
+      - frontend
     restart: always
     depends_on:
       - php
@@ -42,6 +47,8 @@ services:
       dockerfile: MySQL
       args:
         VERSION: ${MYSQL_VERSION}
+    networks:
+      - backend
     restart: always
     ports:
       - "3306:3306"
@@ -50,3 +57,6 @@ services:
     volumes:
       - ${ROOT_PATH}/MySQL/data:/var/lib/mysql
       - ${ROOT_PATH}/MySQL/conf:/etc/mysql/custom.conf.d
+networks:
+  frontend:
+  backend:

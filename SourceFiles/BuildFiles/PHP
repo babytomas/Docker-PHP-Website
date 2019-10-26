@@ -20,6 +20,7 @@ RUN cp /usr/local/etc/php /usr/local/etc/php_bak -a
 
 # Copy php.ini
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+RUN sed 's/display_errors\ =\ Off/display_errors\ =\ On/g' /usr/local/etc/php/php.ini -i
 
 # Install PDO MySQLi and Fileinfo
 RUN docker-php-ext-install pdo pdo_mysql mysqli fileinfo
