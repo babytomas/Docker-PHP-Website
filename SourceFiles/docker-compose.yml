@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
   php:
     container_name: ${APP_NAME}-php
@@ -59,4 +59,6 @@ services:
       - ${ROOT_PATH}/MySQL/conf:/etc/mysql/custom.conf.d
 networks:
   frontend:
+    name: ${APP_NAME}-frontend
   backend:
+    name: ${APP_NAME}-backend
