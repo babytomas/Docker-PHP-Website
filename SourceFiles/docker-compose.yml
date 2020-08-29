@@ -2,7 +2,7 @@ version: "3.7"
 services:
   php:
     container_name: ${APP_NAME}-php
-    image: ${APP_NAME}-php:${PHP_VERSION}-fpm
+    image: ${APP_NAME}-php:${PHP_VERSION}-fpm-alpine
     build:
       context: BuildFiles
       dockerfile: PHP
@@ -53,6 +53,7 @@ services:
     ports:
       - "3306:3306"
     environment:
+      - MYSQL_ROOT_HOST=%
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
     volumes:
       - ${ROOT_PATH}/MySQL/data:/var/lib/mysql

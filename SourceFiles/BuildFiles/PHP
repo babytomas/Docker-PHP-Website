@@ -6,7 +6,7 @@
 ARG VERSION=7.2
 
 # Base on offcial php-fpm
-FROM php:${VERSION}-fpm
+FROM php:${VERSION}-fpm-alpine
 MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
 
 # Copy init scripts
