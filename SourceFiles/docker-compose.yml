@@ -2,7 +2,7 @@ version: "3.7"
 services:
   php:
     container_name: ${APP_NAME}-php
-    image: ${APP_NAME}-php:${PHP_VERSION}-fpm-alpine
+    image: ${APP_NAME}-php:${PHP_VERSION}-fpm
     build:
       context: BuildFiles
       dockerfile: PHP
