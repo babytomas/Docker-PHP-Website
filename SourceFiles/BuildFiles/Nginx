@@ -13,7 +13,7 @@ MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
 COPY scripts /home/init-scripts
 
 # Run the init script
-RUN /bin/bash /home/init-scripts/init.sh
+RUN sh /home/init-scripts/init.sh
 
 # Backup configuration
 RUN cp /etc/nginx/conf.d/default.conf /etc/nginx/default.conf.bak

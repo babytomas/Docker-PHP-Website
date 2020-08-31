@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get php version
 PHP_VERSION=`php -v | grep -o -m 1 "[0-9].[0-9]" | head -1`

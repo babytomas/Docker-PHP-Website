@@ -3,7 +3,7 @@
 # Author: Cheuknang Chiang
 
 # Set the mysql version
-ARG VERSION=5.7
+ARG VERSION=8
 
 # Base on offcial mysql
 FROM mysql:${VERSION}
@@ -13,7 +13,7 @@ MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
 COPY scripts /home/init-scripts
 
 # Run the init script
-RUN /bin/bash /home/init-scripts/init.sh
+RUN sh /home/init-scripts/init.sh
 
 # Include custom configuration
 RUN echo "!includedir /etc/mysql/custom.conf.d/" >> /etc/mysql/my.cnf

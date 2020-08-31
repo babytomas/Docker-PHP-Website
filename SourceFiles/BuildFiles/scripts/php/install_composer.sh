@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Move composer
 mv /home/init-scripts/php/composer.phar /usr/bin/composer

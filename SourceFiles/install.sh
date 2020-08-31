@@ -49,11 +49,11 @@ fi
 
 # Set the PHP version
 while true; do
-  read -p "PHP version ( default is '7.3' ): " PHP_VERSION
+  read -p "PHP version ( default is '7.4' ): " PHP_VERSION
 
   # Default version is '7.3'
   if [ "$PHP_VERSION" = "" ]; then
-      PHP_VERSION="7.3"
+      PHP_VERSION="7.4"
   fi
 
   # Check PHP image
@@ -82,11 +82,11 @@ done
 
 # Set the MySQL version
 while true; do
-  read -p "MySQL version ( default is '5.7' ): " MYSQL_VERSION
+  read -p "MySQL version ( default is '8' ): " MYSQL_VERSION
 
   # Default version is '5.7'
   if [ "$MYSQL_VERSION" = "" ]; then
-      MYSQL_VERSION="5.7"
+      MYSQL_VERSION="8"
   fi
 
   # Check MySQL image
@@ -184,4 +184,4 @@ MYSQL_PASSWORD=$MYSQL_PASSWORD" >> .env
 # ...
 
 # Build and run on docker-compose
-docker-compose up -d
+docker-compose -p $APP_NAME up -d --build

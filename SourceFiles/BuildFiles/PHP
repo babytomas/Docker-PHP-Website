@@ -3,7 +3,7 @@
 # Author: Cheuknang Chiang
 
 # Set the php version
-ARG VERSION=7.2
+ARG VERSION=7.4
 
 # Base on offcial php-fpm
 FROM php:${VERSION}-fpm-alpine
@@ -13,7 +13,7 @@ MAINTAINER Cheuknang Chiang <mail@cheuknang.cn>
 COPY scripts /home/init-scripts
 
 # Run the init script
-RUN /bin/bash /home/init-scripts/init.sh
+RUN sh /home/init-scripts/init.sh
 
 # Backup php configuration
 RUN cp /usr/local/etc/php /usr/local/etc/php_bak -a
@@ -30,10 +30,10 @@ WORKDIR /home/init-scripts/php
 
 # Install IonCube
 #ADD scripts/php/ioncube_loaders_lin_x86-64.tar.gz /usr/local/etc/php/
-RUN /bin/bash /home/init-scripts/php/install_ioncube.sh
+RUN sh /home/init-scripts/php/install_ioncube.sh
 
 # Install Composer
-RUN /bin/bash /home/init-scripts/php/install_composer.sh
+RUN sh /home/init-scripts/php/install_composer.sh
 
 # Other operation
 # ...
