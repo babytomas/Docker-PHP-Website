@@ -33,8 +33,8 @@ services:
     depends_on:
       - php
     ports:
-      - 80
-      - 443
+      - 80:80
+      - 443:443
     volumes:
       - ${ROOT_PATH}/Nginx/conf:/etc/nginx/conf.d
       - ${ROOT_PATH}/Nginx/logs:/var/log/nginx
