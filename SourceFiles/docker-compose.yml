@@ -17,6 +17,9 @@ services:
       - mysql
     expose:
       - 9000
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     volumes:
       - ${ROOT_PATH}/Website:/var/www/html
   nginx:
@@ -35,6 +38,7 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 8080:8080
     volumes:
       - ${ROOT_PATH}/Nginx/conf:/etc/nginx/conf.d
       - ${ROOT_PATH}/Nginx/logs:/var/log/nginx
@@ -50,8 +54,10 @@ services:
     networks:
       - backend
     restart: always
-    expose:
-      - 3306
+    # expose:
+    #     - 3306
+    ports:
+        - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
     volumes:
